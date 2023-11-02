@@ -19,9 +19,13 @@ return new class extends Migration
             $table->unsignedBigInteger("phone_no");
             $table->text("email");
             $table->text("password");
-            $table->text("state")->nullable();
-            $table->text("country")->nullable();
+            $table->text("compunys_name");
+            $table->text("compunys_logo");
+            $table->text("social_link")->nullable();
+            $table->text("social_link")->nullable();
             $table->text("address")->nullable();
+            $table->string("state")->nullable();
+            $table->string("country")->nullable();
             $table->timestamps();
         });
     }

@@ -15,17 +15,21 @@ return new class extends Migration
     {
         Schema::create('costomers', function (Blueprint $table) {
             $table->id();
-            // $table->unsignedBigInteger("studio_id")->nullable();
             $table->string("name");
             $table->unsignedBigInteger("phone_no");
             $table->text("email");
             $table->text("password");
+            $table->text("compunys_name");
+            $table->text("compunys_logo");
+            $table->text("social_link")->nullable();
+            $table->text("social_link")->nullable();
+            $table->text("address")->nullable();
+            $table->string("state")->nullable();
+            $table->string("country")->nullable();
             $table->boolean("email_veryfi")->default(false);
             $table->boolean("phone_veryfi")->default(false);
             $table->boolean("status")->default(false);
-            $table->string("state")->nullable();
-            $table->string("country")->nullable();
-            $table->text("default_address")->nullable();
+            $table->enum("pricing_formate",['us','ind'])->nullable();
             $table->timestamps();
         });
     }

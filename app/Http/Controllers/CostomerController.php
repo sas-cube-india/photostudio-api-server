@@ -53,10 +53,13 @@ class CostomerController extends Controller
         $costomer->name = $req->name;
         $costomer->phone_no = $req->phone_no;
         $costomer->email = $req->email;
-        $costomer->password = $req->password;
+        $costomer->compunys_name = $req->compunys_name;
+        $costomer->compunys_logo = $req->compunys_logo;
+        $costomer->social_link = $req->social_link;
+        $costomer->social_link = $req->social_link;
+        $costomer->address = $req->address;
         $costomer->state = $req->state;
         $costomer->country = $req->country;
-        $costomer->address = $req->address;
         $costomer->save();
 
         event(new newcostomerrequist("$costomer->name Send To Register Request"));
@@ -84,13 +87,9 @@ class CostomerController extends Controller
 
         $costomer = new costomer;
         $costomer->name = $costomerRequst->name;
-        $costomer->phone_no = $costomerRequst->phone_no;
-        $costomer->email = $costomerRequst->email;
-        $costomer->password = Hash::make($costomerRequst->password);
-        $costomer->state = $costomerRequst->state;
-        $costomer->country = $costomerRequst->country;
-        $costomer->default_address = $costomerRequst->default_address;
+        $costomer->name = $costomerRequst->name;
         $costomer->save();
+        $costomer->password = Hash::make($costomerRequst->password);
 
         $costomerRequst->destroy($id);
 
