@@ -22,14 +22,13 @@ return new class extends Migration
             $table->text("compunys_name");
             $table->text("compunys_logo");
             $table->text("social_link")->nullable();
-            $table->text("social_link")->nullable();
             $table->text("address")->nullable();
             $table->string("state")->nullable();
             $table->string("country")->nullable();
             $table->boolean("email_veryfi")->default(false);
             $table->boolean("phone_veryfi")->default(false);
             $table->boolean("status")->default(false);
-            $table->enum("pricing_formate",['us','ind'])->nullable();
+            $table->enum("pricing_formate", ['us', 'ind'])->nullable();
             $table->timestamps();
         });
     }

@@ -22,7 +22,6 @@ return new class extends Migration
             $table->text("compunys_name");
             $table->text("compunys_logo");
             $table->text("social_link")->nullable();
-            $table->text("social_link")->nullable();
             $table->text("address")->nullable();
             $table->string("state")->nullable();
             $table->string("country")->nullable();
