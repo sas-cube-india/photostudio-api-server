@@ -65,7 +65,7 @@ class Handler extends ExceptionHandler
                     return response()->json(['message' => $ex->getMessage(), 'status' => 403], 403);
                 }
 
-                // return response()->json(['message' => $ex->getMessage(), 'status' => 404], 404);
+                return response()->json(['message' => $ex->getMessage(), 'status' => 500], 500);
             }
         });
     }

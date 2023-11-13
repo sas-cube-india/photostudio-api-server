@@ -1,7 +1,12 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\authModule\authtication;
+use App\Http\Controllers\CostomerController;
+use App\Http\Controllers\CostomerrequistController;
 use App\Http\Controllers\CoverController;
+use App\Http\Controllers\ListOptionsController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,6 +29,9 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('user', [AuthController::class, 'user']);
     Route::post('logout', [AuthController::class, 'logout']);
     Route::apiResource('covers', CoverController::class);
+    Route::get('options/orientations', [ListOptionsController::class, 'orientation_options']);
+    Route::get('options/orientations-sizes/{orientation_id}', [ListOptionsController::class, 'orientation_size_options']);
+    Route::get('options/sheets', [ListOptionsController::class, 'sheet_options']);
 });
 
 Route::Post('auth/login', [authtication::class, 'login']);
