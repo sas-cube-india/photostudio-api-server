@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Models\Cover;
 use App\Models\Orientation;
 use App\Models\OrientationSize;
 use App\Models\Sheet;
@@ -34,6 +35,16 @@ class ListOptionsService
             return [
                 'value' => $sheet->id,
                 'label' => $sheet->name,
+            ];
+        });
+    }
+
+    public static function cover_options()
+    {
+        return Cover::all()->map(function ($cover) {
+            return [
+                'value' => $cover->id,
+                'label' => $cover->name,
             ];
         });
     }

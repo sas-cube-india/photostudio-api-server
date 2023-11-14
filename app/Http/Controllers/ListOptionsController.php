@@ -35,4 +35,14 @@ class ListOptionsController extends Controller
             'status' => 200,
         ], 200);
     }
+
+    public function cover_options()
+    {
+        $options = ListOptionsService::cover_options();
+
+        return response()->json([
+            'data'   => $options,
+            'status' => 200,
+        ], 200);
+    }
 }
