@@ -8,15 +8,14 @@ use Illuminate\Support\Facades\Hash;
 
 class UserSeeder extends Seeder
 {
-
     public function run()
     {
-        $superadmin = User::create([
+        User::create([
             'name'              => 'Super Admin',
             'phone'             => '+91 14 50563232',
             'email'             => 'admin@demo.com',
             'password'          => Hash::make('admin@123'),
-            'role'              => 'admin',
+            'role'              => User::ADMIN,
             'email_verified_at' => \now(),
         ]);
 

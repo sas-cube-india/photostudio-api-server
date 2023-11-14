@@ -9,6 +9,8 @@ class SheetPricingSeeder extends Seeder
 {
     public function run()
     {
+        SheetPricing::truncate();
+
         // Thermal Sheet Pricing for Square Orientation
         SheetPricing::create(['sheet_id' => 1, 'orientation_size_id' => 1, 'price' => 145]);
         SheetPricing::create(['sheet_id' => 1, 'orientation_size_id' => 2, 'price' => 145]);

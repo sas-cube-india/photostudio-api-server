@@ -9,6 +9,8 @@ class OrientationSeeder extends Seeder
 {
     public function run()
     {
+        Orientation::truncate();
+
         $square_orientation = Orientation::create(['name' => 'Square (HxW)']);
         $square_orientation->sizes()->create(['height' => 8, 'width' => 8]);
         $square_orientation->sizes()->create(['height' => 10, 'width' => 10]);

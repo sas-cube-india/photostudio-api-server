@@ -6,27 +6,15 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('covers', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->decimal('standard_price', 10, 2)->default('0.00');
-            $table->decimal('premium_price', 10, 2)->default('0.00');
+            $table->string('name');
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('covers');

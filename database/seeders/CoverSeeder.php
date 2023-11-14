@@ -7,38 +7,18 @@ use Illuminate\Database\Seeder;
 
 class CoverSeeder extends Seeder
 {
-
     public function run()
     {
-        Cover::create([
-            'title'          => 'Image Wrap',
-            'standard_price' => 2000,
-            'premium_price'  => 1800,
-        ]);
+        Cover::truncate();
 
-        Cover::create([
-            'title'          => 'Leather',
-            'standard_price' => 2000,
-            'premium_price'  => 1800,
-        ]);
-
-        Cover::create([
-            'title'          => 'Photo',
-            'standard_price' => 2000,
-            'premium_price'  => 1800,
-        ]);
-
-        Cover::create([
-            'title'          => 'Acrylic Cameo',
-            'standard_price' => 2000,
-            'premium_price'  => 1800,
-        ]);
-
-        Cover::create([
-            'title'          => 'Canvas',
-            'standard_price' => 2000,
-            'premium_price'  => 1800,
-        ]);
-
+        Cover::create(['name' => 'Image Wrap']);
+        Cover::create(['name' => 'Leather']);
+        Cover::create(['name' => 'Photo']);
+        Cover::create(['name' => 'Acrylic Cameo']);
+        Cover::create(['name' => 'Canvas']);
+        Cover::create(['name' => 'Full Acrylic']);
+        Cover::create(['name' => 'Linen']);
+        Cover::create(['name' => 'Print On Wood']);
+        Cover::create(['name' => 'Print On Leather']);
     }
 }

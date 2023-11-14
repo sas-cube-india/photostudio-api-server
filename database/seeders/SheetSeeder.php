@@ -9,6 +9,8 @@ class SheetSeeder extends Seeder
 {
     public function run()
     {
+        Sheet::truncate();
+
         Sheet::create(['name' => 'Thermal Sheet']);
         Sheet::create(['name' => 'White Sheet']);
         Sheet::create(['name' => 'Black Sheet']);
