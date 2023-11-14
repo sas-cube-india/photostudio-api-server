@@ -17,6 +17,8 @@ class SystemSeeder extends Seeder
             SheetPricingSeeder::class,
             CoverSeeder::class,
             CoverPricingSeeder::class,
+            BoxSleeveSeeder::class,
+            BoxSleevePricingSeeder::class,
         ]);
 
         Schema::enableForeignKeyConstraints();

@@ -45,4 +45,14 @@ class ListOptionsController extends Controller
             'status' => 200,
         ], 200);
     }
+
+    public function box_sleeve_options()
+    {
+        $options = ListOptionsService::box_sleeve_options();
+
+        return response()->json([
+            'data'   => $options,
+            'status' => 200,
+        ], 200);
+    }
 }

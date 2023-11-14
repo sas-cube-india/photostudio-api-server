@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Models\BoxSleeve;
 use App\Models\Cover;
 use App\Models\Orientation;
 use App\Models\OrientationSize;
@@ -45,6 +46,16 @@ class ListOptionsService
             return [
                 'value' => $cover->id,
                 'label' => $cover->name,
+            ];
+        });
+    }
+
+    public static function box_sleeve_options()
+    {
+        return BoxSleeve::all()->map(function ($box_sleeve) {
+            return [
+                'value' => $box_sleeve->id,
+                'label' => $box_sleeve->name,
             ];
         });
     }

@@ -2,8 +2,10 @@
 
 namespace App\Services;
 
+use App\Http\Resources\BoxSleevePricingResource;
 use App\Http\Resources\CoverPricingResource;
 use App\Http\Resources\SheetPricingResource;
+use App\Models\BoxSleevePricing;
 use App\Models\CoverPricing;
 use App\Models\SheetPricing;
 
@@ -23,6 +25,14 @@ class PricingService
             ->where('orientation_size_id', $orientation_size_id)->first();
 
         return new CoverPricingResource($cover_pricing);
+    }
+
+    public static function box_sleeve_pricing($box_sleeve_id, $orientation_size_id)
+    {
+        $box_sleeve_pricing = BoxSleevePricing::where('box_sleeve_id', $box_sleeve_id)
+            ->where('orientation_size_id', $orientation_size_id)->first();
+
+        return new BoxSleevePricingResource($box_sleeve_pricing);
     }
 
 }
