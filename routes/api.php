@@ -5,6 +5,7 @@ use App\Http\Controllers\authModule\authtication;
 use App\Http\Controllers\CostomerController;
 use App\Http\Controllers\CostomerrequistController;
 use App\Http\Controllers\ListOptionsController;
+use App\Http\Controllers\PricingController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
@@ -34,6 +35,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('options/covers', [ListOptionsController::class, 'cover_options']);
 
     Route::get('pricing/sheet/{sheet_id}/orientation-size/{orientation_size_id}', [PricingController::class, 'sheet_pricing']);
+    Route::get('pricing/cover/{cover_id}/orientation-size/{orientation_size_id}', [PricingController::class, 'cover_pricing']);
 });
 
 Route::Post('auth/login', [authtication::class, 'login']);

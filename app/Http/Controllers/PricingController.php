@@ -15,4 +15,14 @@ class PricingController extends Controller
             'status' => 200,
         ], 200);
     }
+
+    public function cover_pricing($cover_id, $orientation_size_id)
+    {
+        $options = PricingService::cover_pricing($cover_id, $orientation_size_id);
+
+        return response()->json([
+            'data'   => $options,
+            'status' => 200,
+        ], 200);
+    }
 }
