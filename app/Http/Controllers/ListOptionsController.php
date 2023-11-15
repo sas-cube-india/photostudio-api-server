@@ -55,4 +55,14 @@ class ListOptionsController extends Controller
             'status' => 200,
         ], 200);
     }
+
+    public function product_type_options()
+    {
+        $options = ListOptionsService::product_type_options();
+
+        return response()->json([
+            'data'   => $options,
+            'status' => 200,
+        ], 200);
+    }
 }

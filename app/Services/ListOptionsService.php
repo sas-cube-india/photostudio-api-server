@@ -6,6 +6,7 @@ use App\Models\BoxSleeve;
 use App\Models\Cover;
 use App\Models\Orientation;
 use App\Models\OrientationSize;
+use App\Models\ProductType;
 use App\Models\Sheet;
 
 class ListOptionsService
@@ -56,6 +57,16 @@ class ListOptionsService
             return [
                 'value' => $box_sleeve->id,
                 'label' => $box_sleeve->name,
+            ];
+        });
+    }
+
+    public static function product_type_options()
+    {
+        return ProductType::all()->map(function ($product_type) {
+            return [
+                'value' => $product_type->id,
+                'label' => $product_type->name,
             ];
         });
     }

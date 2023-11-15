@@ -34,6 +34,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('options/sheets', [ListOptionsController::class, 'sheet_options']);
     Route::get('options/covers', [ListOptionsController::class, 'cover_options']);
     Route::get('options/box-sleeves', [ListOptionsController::class, 'box_sleeve_options']);
+    Route::get('options/product-types', [ListOptionsController::class, 'product_type_options']);
 
     Route::get('pricing/sheet/{sheet_id}/orientation-size/{orientation_size_id}', [PricingController::class, 'sheet_pricing']);
     Route::get('pricing/cover/{cover_id}/orientation-size/{orientation_size_id}', [PricingController::class, 'cover_pricing']);
