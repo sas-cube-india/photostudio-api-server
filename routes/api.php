@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\authModule\authtication;
 use App\Http\Controllers\CostomerController;
 use App\Http\Controllers\CostomerrequistController;
+use App\Http\Controllers\CoverController;
 use App\Http\Controllers\ListOptionsController;
 use App\Http\Controllers\PricingController;
 use App\Http\Controllers\ProductController;
@@ -29,12 +30,16 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('user', [AuthController::class, 'user']);
     Route::post('logout', [AuthController::class, 'logout']);
 
-    Route::get('options/orientations', [ListOptionsController::class, 'orientation_options']);
-    Route::get('options/orientations-sizes/{orientation_id}', [ListOptionsController::class, 'orientation_size_options']);
-    Route::get('options/sheets', [ListOptionsController::class, 'sheet_options']);
-    Route::get('options/covers', [ListOptionsController::class, 'cover_options']);
-    Route::get('options/box-sleeves', [ListOptionsController::class, 'box_sleeve_options']);
-    Route::get('options/product-types', [ListOptionsController::class, 'product_type_options']);
+    Route::apiResource('covers', CoverController::class)->only(['store', 'update']);
+
+    // Route::get('options/orientations', [ListOptionsController::class, 'orientation_options']);
+    // Route::get('options/orientations-sizes/{orientation_id}', [ListOptionsController::class, 'orientation_size_options']);
+    // Route::get('options/sheets', [ListOptionsController::class, 'sheet_options']);
+    // Route::get('options/covers', [ListOptionsController::class, 'cover_options']);
+    // Route::get('options/box-sleeves', [ListOptionsController::class, 'box_sleeve_options']);
+    // Route::get('options/product-types', [ListOptionsController::class, 'product_type_options']);
+
+    Route::get('product-options', [ListOptionsController::class, 'product_options']);
 
     Route::get('pricing/sheet/{sheet_id}/orientation-size/{orientation_size_id}', [PricingController::class, 'sheet_pricing']);
     Route::get('pricing/cover/{cover_id}/orientation-size/{orientation_size_id}', [PricingController::class, 'cover_pricing']);

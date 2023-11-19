@@ -11,6 +11,31 @@ use App\Models\Sheet;
 
 class ListOptionsService
 {
+
+    public static function product_options()
+    {
+        $orientations = Orientation::all();
+        $orientation_size = OrientationSize::all();
+        $sheets = Sheet::all();
+        $cover = Cover::all();
+        $box_sleeve = BoxSleeve::all();
+
+        return [
+            [
+                'name'        => '',
+                'img'         => '',
+                'minPage'     => 20,
+                'Orientation' => $orientations,
+                'size'        => $orientation_size,
+                'SheetType'   => $sheets,
+                'cover'       => $cover,
+                'boxSleev'    => $box_sleeve,
+                'printOption' => [],
+                'color'       => [],
+            ],
+        ];
+    }
+
     public static function orientation_options()
     {
         return Orientation::all()->map(function ($orientation) {

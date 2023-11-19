@@ -6,6 +6,17 @@ use App\Services\ListOptionsService;
 
 class ListOptionsController extends Controller
 {
+
+    public function product_options()
+    {
+        $options = ListOptionsService::product_options();
+
+        return response()->json([
+            'data'   => $options,
+            'status' => 200,
+        ], 200);
+    }
+
     public function orientation_options()
     {
         $options = ListOptionsService::orientation_options();
